@@ -1,0 +1,46 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    min-width: 100vh;
+    background-color: rgb(95, 90, 90);
+
+}
+
+.hero {
+    position: relative;
+    font-size: 100px;
+    color: #252839;
+    -webkit-text-stroke:0.2vw #383d52;
+    text-transform: uppercase;
+    margin-top: 80px;
+}
+
+.hero::before {
+    content: attr(data-text);
+    position: absolute;
+    width: 0;
+    top: 0;
+    left: 0;
+    height: 100%;
+    color: #fe0101;
+    -webkit-text-stroke: 0.0vw #383d52;
+    border-right: 2px solid #0a1688;
+    overflow: hidden;
+    animation: animate 6s linear infinite;
+}
+
+@keyframes animate {
+    0%,10%, 100% {
+        width: 0;
+    }
+
+    70%, 80% {
+        width: 100%;
+    }
+}
